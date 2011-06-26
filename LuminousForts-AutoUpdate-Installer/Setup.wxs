@@ -1,0 +1,25 @@
+﻿<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="LuminousForts" Language="1033" Version="1.0.0.0" UpgradeCode="A1C9E1BA-B7EC-49B2-8F3A-134780161323" Manufacturer="LuminousForts">
+		<Package Description="#Description" Comments="Comments" InstallerVersion="200" Compressed="yes" />
+		<!--
+			Source media for the installation. 
+ 			Specifies a single cab file to be embedded in the installer's .msi. 
+		-->
+		<Media Id="1" Cabinet="contents.cab" EmbedCab="yes" CompressionLevel="high" />
+		<!-- Installation directory and files are defined in Files.wxs -->
+		<Directory Id="TARGETDIR" Name="SourceDir" />
+		<Feature Id="Complete" Title="LuminousForts" Description="Tool to automatically update from the LuminousForts SVN" Level="1">
+			<ComponentRef Id="MyComponent" />
+		</Feature>
+		<!-- 
+			Using the Wix UI library
+ 
+			WixUI_InstallDir does not allow the user to choose 
+			features but adds a dialog to let the user choose a 
+			directory where the product will be installed
+		-->
+		<Property Id="WIXUI_INSTALLDIR">INSTALLDIR</Property>
+		<UIRef Id="WixUI_InstallDir" />
+	</Product>
+</Wix>

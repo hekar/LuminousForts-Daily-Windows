@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.0.1.7167
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuminousForts-AutoUpdate-GUI", "LuminousForts-AutoUpdate-GUI\LuminousForts-AutoUpdate-GUI.csproj", "{F575B624-5D1F-48DF-8C2B-81B8F9765E8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuminousForts-AutoUpdate-Service", "LuminousForts-AutoUpdate-Service\LuminousForts-AutoUpdate-Service.csproj", "{6CD0740D-5FD4-4CB5-95FC-E766CF235D8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuminousForts-AutoUpdate-Shared", "LuminousForts-AutoUpdate-Shared\LuminousForts-AutoUpdate-Shared.csproj", "{417F95F1-C646-48AB-888B-2FC1B68DCB1D}"
+EndProject
+Project("{CFEE4113-1246-4D54-95CB-156813CB8593}") = "LuminousForts-AutoUpdate-Installer", "LuminousForts-AutoUpdate-Installer\LuminousForts-AutoUpdate-Installer.wixproj", "{75030113-7CFF-43BC-8DE1-7925B9E39559}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F575B624-5D1F-48DF-8C2B-81B8F9765E8A}.Debug|x86.Build.0 = Debug|x86
+		{F575B624-5D1F-48DF-8C2B-81B8F9765E8A}.Debug|x86.ActiveCfg = Debug|x86
+		{F575B624-5D1F-48DF-8C2B-81B8F9765E8A}.Release|x86.Build.0 = Release|x86
+		{F575B624-5D1F-48DF-8C2B-81B8F9765E8A}.Release|x86.ActiveCfg = Release|x86
+		{6CD0740D-5FD4-4CB5-95FC-E766CF235D8B}.Debug|x86.Build.0 = Debug|x86
+		{6CD0740D-5FD4-4CB5-95FC-E766CF235D8B}.Debug|x86.ActiveCfg = Debug|x86
+		{6CD0740D-5FD4-4CB5-95FC-E766CF235D8B}.Release|x86.Build.0 = Release|x86
+		{6CD0740D-5FD4-4CB5-95FC-E766CF235D8B}.Release|x86.ActiveCfg = Release|x86
+		{417F95F1-C646-48AB-888B-2FC1B68DCB1D}.Debug|x86.Build.0 = Debug|x86
+		{417F95F1-C646-48AB-888B-2FC1B68DCB1D}.Debug|x86.ActiveCfg = Debug|x86
+		{417F95F1-C646-48AB-888B-2FC1B68DCB1D}.Release|x86.Build.0 = Release|x86
+		{417F95F1-C646-48AB-888B-2FC1B68DCB1D}.Release|x86.ActiveCfg = Release|x86
+		{75030113-7CFF-43BC-8DE1-7925B9E39559}.Debug|x86.Build.0 = Debug|x86
+		{75030113-7CFF-43BC-8DE1-7925B9E39559}.Debug|x86.ActiveCfg = Debug|x86
+		{75030113-7CFF-43BC-8DE1-7925B9E39559}.Release|x86.Build.0 = Release|x86
+		{75030113-7CFF-43BC-8DE1-7925B9E39559}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+EndGlobal

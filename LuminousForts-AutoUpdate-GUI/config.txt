@@ -1,0 +1,5 @@
+﻿svn_path:C:\Program Files\SlikSvn\bin
+game_folder:C:\Program Files\Steam\steamapps\sourcemods\luminousforts
+hlds_command:hldsupdatetool -command update -game "luminousforts" -dir .
+hlds_workdir:C:\Program Files\Steam\Valve\HLDS\LuminousFortsServer
+update_interval:180
