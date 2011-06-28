@@ -107,7 +107,7 @@ namespace LuminousForts_AutoUpdate_GUI
 			this.Controls.Add(this.valueLabel);
 			this.Controls.Add(this.keyLabel);
 			this.Name = "EditItem";
-			this.Text = "EditItem";
+			this.Text = "Edit Item";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}

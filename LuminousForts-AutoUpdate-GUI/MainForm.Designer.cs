@@ -77,14 +77,14 @@ namespace LuminousForts_AutoUpdate_GUI
 			// reloadToolStripMenuItem
 			// 
 			this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
-			this.reloadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.reloadToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
 			this.reloadToolStripMenuItem.Text = "Reload";
 			this.reloadToolStripMenuItem.Click += new System.EventHandler(this.ReloadToolStripMenuItemClick);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItemClick);
 			// 
@@ -158,7 +158,7 @@ namespace LuminousForts_AutoUpdate_GUI
 			this.Controls.Add(this.menuStrip);
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "MainForm";
-			this.Text = "LuminousForts-AutoUpdate-GUI";
+			this.Text = "LuminousForts AutoUpdater";
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
 			this.ResumeLayout(false);
