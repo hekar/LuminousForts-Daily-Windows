@@ -2,15 +2,16 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Fragment>
 		<DirectoryRef Id="TARGETDIR">
+			<Directory Id="DesktopFolder" Name="Desktop" />
 			<Directory Id="ProgramFilesFolder" Name="PFiles">
 				<Directory Id="INSTALLDIR" Name="LuminousForts">
 					<Directory Id="PROGRAMDIR" Name="AutoUpdater">
 						<Component Id="MyComponent" Guid="09DC22C3-6E65-470D-A033-69CEFB21BD0E" DiskId="1">
 							<File Id="LicenseFile" Name="license.rtf" Source="license.rtf"/>
 							<File Id="ConfigFile" Name="config.txt" Source="..\LuminousForts-AutoUpdate-Service\bin\Release\config.txt"/>
-							<File Id="LuminousFortsLibrary" Name="LuminousForts-AutoUpdate-Shared.dll" Source="..\LuminousForts-AutoUpdate-Shared\bin\Release\LuminousForts-AutoUpdate-Shared.dll"/>
-							<File Id="LuminousFortsGUI" Name="LuminousForts-AutoUpdate-GUI.exe" Source="..\LuminousForts-AutoUpdate-GUI\bin\Release\LuminousForts-AutoUpdate-GUI.exe"/>
-							<File Id='LuminousFortsServiceEXE' Name='LuminousFortsService.exe' DiskId='1' Source='..\LuminousForts-AutoUpdate-Service\bin\Release\LuminousFortsService.exe'  KeyPath='yes'/>         
+							<File Id="LuminousFortsLibrary" Name="LuminousForts-AutoUpdate-Shared.dll" Source="..\LuminousForts-AutoUpdate-Shared\bin\Release\LuminousForts-AutoUpdate-Shared.dll"><Shortcut Id="DesktopShortcut" Directory="DesktopFolder" Name="LuminousForts AutoUpdate" WorkingDirectory='PROGRAMDIR' Advertise="yes" /></File>
+							<File Id="LuminousFortsGUI" Name="LuminousForts-AutoUpdate-GUI.exe" KeyPath='yes' DiskId='1' Source="..\LuminousForts-AutoUpdate-GUI\bin\Release\LuminousForts-AutoUpdate-GUI.exe"/>
+							<File Id='LuminousFortsServiceEXE' Name='LuminousFortsService.exe' Source='..\LuminousForts-AutoUpdate-Service\bin\Release\LuminousFortsService.exe'/>
 							<ServiceInstall
 							Id="ServiceInstaller"
 							Type="ownProcess"

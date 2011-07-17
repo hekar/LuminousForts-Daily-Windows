@@ -16,8 +16,10 @@ namespace LuminousForts_AutoUpdate_Shared
 	/// </summary>
 	public class HLDSProcess
 	{
-		Config config;
-		Process process = null;
+		private int lastProcessId = 0;
+		private Config config;
+		private Process process = null;
+		
 		public HLDSProcess(Config config)
 		{
 			this.config = config;
@@ -36,6 +38,7 @@ namespace LuminousForts_AutoUpdate_Shared
 				args += argv[i];
 			}
 			process.StartInfo.Arguments = args;
+			lastProcessId = process.Id;
 			process.Start();
 			
 			process.WaitForExit();
@@ -48,6 +51,14 @@ namespace LuminousForts_AutoUpdate_Shared
 			if (process != null)
 			{
 				process.Kill();
+			}
+			
+			foreach (Process proc in Process.GetProcesses()) {
+				if (proc.Id == lastProcessId)
+				{
+					proc.Kill();
+					break;
+				}
 			}
 			
 			process = null;

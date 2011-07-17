@@ -29,17 +29,23 @@ namespace LuminousForts_AutoUpdate_GUI
 		public MainForm()
 		{
 			InitializeComponent();
-
-			config = new Config();
-			LoadConfig();		
-			svnUpdater = new SVNUpdater(config, icon);
-			ShowInTaskbar = false;
-			icon.DoubleClick += new EventHandler(icon_Click);
 			timer = new Timer();
-			timer.Interval = config.UpdateInterval;
-			timer.Tick += new EventHandler(timer_Tick);
+			config = new Config();
+			svnUpdater = new SVNUpdater(config, icon);
+			icon.DoubleClick += new EventHandler(icon_Click);
+			ShowInTaskbar = false;
+			Reload();
 		}
 
+		private void Reload()
+		{
+			LoadConfig();
+			timer.Stop();
+			timer.Interval = config.UpdateInterval * 1000;
+			timer.Tick += new EventHandler(timer_Tick);
+			timer.Start();
+		}
+		
 		void icon_Click(object sender, EventArgs e)
 		{
 			if (WindowState != FormWindowState.Minimized)
@@ -64,7 +70,7 @@ namespace LuminousForts_AutoUpdate_GUI
 		
 		void ReloadToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			LoadConfig();
+			Reload();
 		}
 		
 		void ForceUpdateToolStripMenuItemClick(object sender, EventArgs e)
@@ -104,13 +110,20 @@ namespace LuminousForts_AutoUpdate_GUI
 					config.Properties[editDlg.Key] = editDlg.Value;
 					config.WriteConfig();
 					timer.Interval = config.UpdateInterval;
+					Reload();
 				}
 			}
 		}
 		
 		void timer_Tick(object sender, EventArgs e)
 		{
-			svnUpdater.Update();
+			try 
+			{
+				svnUpdater.Update();
+			}
+			catch (Exception)
+			{
+			}
 		}		
 	}
 }

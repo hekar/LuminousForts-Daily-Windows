@@ -1,5 +1,5 @@
 ﻿svn_path:C:\Program Files\SlikSvn\bin
 game_folder:C:\Program Files\Steam\steamapps\sourcemods\luminousforts
-hlds_command:hldsupdatetool -command update -game "luminousforts" -dir .
-hlds_workdir:C:\Program Files\Steam\Valve\HLDS\LuminousFortsServer
-update_interval:180
+hlds_command:srcds.exe -console -game luminousforts -allowdebug +map lfc_caved +maxplayers 16 -tickrate 67
+hlds_workdir:C:\Program Files\Valve\HLServer\orangebox\orangebox
+update_interval:5

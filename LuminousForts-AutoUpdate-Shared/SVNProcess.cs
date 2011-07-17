@@ -8,6 +8,8 @@
  */
 using System;
 using System.Diagnostics;
+using System.IO;
+using System.Text;
 
 namespace LuminousForts_AutoUpdate_Shared
 {
@@ -30,11 +32,31 @@ namespace LuminousForts_AutoUpdate_Shared
 			process.StartInfo.WorkingDirectory = config.LuminousFortsPath;
 			process.StartInfo.FileName = config.SVNPath + "svn";
 			process.StartInfo.Arguments = "update";
+			process.StartInfo.UseShellExecute = false;
+			process.StartInfo.RedirectStandardOutput = true;
 			process.Start();
+
+			StringBuilder builder = new StringBuilder();
+			StreamReader reader = process.StandardOutput;
+			while (!reader.EndOfStream)
+			{
+				string data = reader.ReadToEnd();
+				builder.Append(data);
+			}
+			
+			string svnOutput = builder.ToString();
+			FileLogger.Instance.Write("-------SVN OUTPUT-----");
+			FileLogger.Instance.Write(svnOutput);
+			
+			bool updated = false;
+			if (svnOutput.Split('\n').Length > 2)
+			{
+				updated = true;
+			}
 			
 			process.WaitForExit();
 			
-			return process.ExitCode == 0;
+			return updated && process.ExitCode == 0;
 		}
 		
 		public void Stop()
@@ -45,7 +67,7 @@ namespace LuminousForts_AutoUpdate_Shared
 			}
 			
 			process = null;
-		}		
+		}
 		
 		public bool HasExited
 		{

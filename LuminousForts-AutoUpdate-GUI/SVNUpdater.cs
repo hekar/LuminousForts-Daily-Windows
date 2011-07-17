@@ -69,7 +69,7 @@ namespace LuminousForts_AutoUpdate_GUI
 		{
 			if (e.ProgressPercentage == 1)
 			{
-				icon.ShowBalloonTip(5, "Failure", "Failure to update LuminousForts (Check your SVN Installation)", ToolTipIcon.Info);
+				icon.ShowBalloonTip(5, "Failure", "No Update Found...", ToolTipIcon.Info);
 			}
 			else if (e.ProgressPercentage < 100)
 			{
